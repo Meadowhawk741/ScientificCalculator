@@ -14,7 +14,7 @@ public class MainApplication {
         Double currentNumber = 0.0;
         Double memoryNum = 0.0;
         String mode = "degrees";
-
+        String display = "decimal";
 
         Console.println("CURRENT NUMBER: %s", currentNumber);
 
@@ -90,8 +90,18 @@ public class MainApplication {
             }else if (Objects.equals(userInput, "Clear")) {
                 currentNumber = clearScreen();
                 Console.println("CURRENT NUMBER %s", currentNumber);
-            }else if(Objects.equals(userInput.toLowerCase(), "cosine")){
+            }else if(Objects.equals(userInput.toLowerCase(), "cosine")) {
                 currentNumber = cosine(currentNumber, mode);
+                Console.println("CURRENT NUMBER %s", currentNumber);
+            }else if (Objects.equals(userInput, "storage")) {
+                Save(currentNumber);
+            }else if ( Objects.equals(userInput, "recall")   ) {
+                currentNumber = recall();
+                Console.println("CURRENT NUMBER %s", currentNumber);
+            } else if (Objects.equals(userInput, "switch1")){
+                switchDisplayMode();
+                String newMode = scanner.nextLine();
+                display = switchUnitModes(newMode);
                 Console.println("CURRENT NUMBER %s", currentNumber);
             }else if (Objects.equals(userInput.toLowerCase(), "exit")) {
                 break;
