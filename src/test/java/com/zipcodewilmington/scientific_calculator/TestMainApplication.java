@@ -372,6 +372,40 @@ public class TestMainApplication {
         assertEquals(expected, inCos(number, "radians"));
     }
 
+    @Test
+    public void testInverseTanDegrees(){
+        Double number = 1.0;
 
+        Double expected = 45.0;
+
+        assertEquals(expected, inTan(number, "degrees"));
+    }
+
+    @Test
+    public void testInverseTanDegrees2(){
+        Double number = 0.0;
+
+        Double expected = 0.0;
+
+        assertEquals(expected, inTan(number, "degrees"));
+    }
+
+    @Test
+    public void testInverseTanRadians(){
+        Double number = 0.0;
+
+        Double expected = 0.0;
+
+        assertEquals(expected, inTan(number, "radians"));
+    }
+
+    @Test
+    public void testInverseTanRadians2(){
+        Double number = 1.0;
+
+        Double expected = Math.PI / 4;
+
+        assertEquals(expected, inTan(number, "radians"));
+    }
 
 }

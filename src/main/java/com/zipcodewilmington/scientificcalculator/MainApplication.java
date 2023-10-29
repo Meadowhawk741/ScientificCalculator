@@ -106,16 +106,20 @@ public class MainApplication {
                 currentNumber = inCos(currentNumber, mode);
                 print("CURRENT NUMBER %s", currentNumber);
             }
-            else if (Objects.equals(userInput, "storage")) {
+            else if (Objects.equals(userInput.toLowerCase(), "storage")) {
                 Save(currentNumber);
-            }else if ( Objects.equals(userInput, "recall")   ) {
+            }else if ( Objects.equals(userInput.toLowerCase(), "recall")   ) {
                 currentNumber = recall();
                 Console.println("CURRENT NUMBER %s", currentNumber);
-            } else if (Objects.equals(userInput, "switch1")){
+            } else if (Objects.equals(userInput.toLowerCase(), "switch1")){
                 switchDisplayMode();
                 String newMode = scanner.nextLine();
                 display = switchUnitModes(newMode);
                 Console.println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if(Objects.equals(userInput.toLowerCase(), "atan")){
+                currentNumber = inTan(currentNumber, mode);
+                println("CURRENT NUMBER %s", currentNumber);
             }else if (Objects.equals(userInput.toLowerCase(), "exit")) {
                 break;
             }

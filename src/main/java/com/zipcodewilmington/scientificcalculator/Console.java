@@ -130,9 +130,9 @@ public class Console {
 
     public static Double inTan(Double number, String mode){
         if(mode.equals("degrees")){
-            return Math.atan(Math.toRadians(number));
+            return Math.toDegrees(Math.atan(number));
         }
-        return (double) (Math.round(Math.atan(number) * 100) / 100);
+        return Math.atan(number);
     }
 
     public static void switchUnitModes() {
