@@ -5,6 +5,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 import static com.zipcodewilmington.scientificcalculator.Console.*;
+import static com.zipcodewilmington.scientificcalculator.CoreFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.ScientificFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.UniqueFunctions.*;
 
 /**
  * Created by leon on 2/9/18.
@@ -18,26 +21,24 @@ public class MainApplication {
         String display = "decimal";
 
         println("CURRENT NUMBER: %s", currentNumber);
-
-//        String s = Console.getStringInput("Enter a string");
         currentNumber = getDoubleInput("Enter an integer");
-//        Double d = Console.getDoubleInput("Enter a double.");
-
-//        Console.println("The user input %s as a string", s);
-//        Console.println("The user input %s as a integer", i);
-//        Console.println("The user input %s as a double", d);
         println("CURRENT NUMBER: %s", currentNumber);
 
         while (true) {
-            println("What do you want to do? 1) Add 2) Subtract 3) Invert 4) Multiply 5) Divide 6) Square " +
-                    "8) Sqrt 9) Power 10) Inverse");
+            println("What do you want to do? \n1) Add 2) Subtract 3) Invert 4) Multiply 5) Divide 6) Square \n" +
+                    "7) Sqrt 8) Power 9) Inverse 10) sin 11) cos 12) tan 13) asin 14) acos 15) atan \n" +
+                    "16) switch (degrees/radians) 17) clear 18) factorial 19) log 20) storage " +
+                    "21) recall");
+
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
+
             if (Objects.equals(userInput.toLowerCase(), "add")) {
                 Double i2 = getDoubleInput("Enter an integer to add");
                 currentNumber = addNumbers(currentNumber, i2);
                 println("CURRENT NUMBER: %s", currentNumber);
-            } else if (Objects.equals(userInput.toLowerCase(), "invert")) {
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "invert")) {
                 currentNumber = numberSign(currentNumber);
                 println("CURRENT NUMBER: %s", currentNumber);
             }
@@ -78,7 +79,7 @@ public class MainApplication {
                 currentNumber = inverse(currentNumber);
                 println("CURRENT NUMBER %s", currentNumber);
             }
-            else if(Objects.equals(userInput.toLowerCase(), "sine")){
+            else if(Objects.equals(userInput.toLowerCase(), "sin")){
                 currentNumber = sine(currentNumber, mode);
                 println("CURRENT NUMBER %s", currentNumber);
             }
@@ -88,17 +89,20 @@ public class MainApplication {
                 mode = switchUnitModes(newMode);
                 println("CURRENT NUMBER %s", currentNumber);
 
-            }else if (Objects.equals(userInput, "Clear")) {
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "clear")) {
                 currentNumber = clearScreen();
                 Console.println("CURRENT NUMBER %s", currentNumber);
-            }else if(Objects.equals(userInput.toLowerCase(), "cosine")) {
+            }
+            else if(Objects.equals(userInput.toLowerCase(), "cos")) {
                 currentNumber = cosine(currentNumber, mode);
                 println("CURRENT NUMBER %s", currentNumber);
             }
-            else if(Objects.equals(userInput.toLowerCase(), "tangent")){
+            else if(Objects.equals(userInput.toLowerCase(), "tan")){
                 currentNumber = tangent(currentNumber, mode);
                 println("CURRENT NUMBER %s", currentNumber);
-            }else if(Objects.equals(userInput.toLowerCase(), "asin")){
+            }
+            else if(Objects.equals(userInput.toLowerCase(), "asin")){
                 currentNumber = inSin(currentNumber, mode);
                 println("CURRENT NUMBER %s", currentNumber);
             }
@@ -107,11 +111,13 @@ public class MainApplication {
                 print("CURRENT NUMBER %s", currentNumber);
             }
             else if (Objects.equals(userInput.toLowerCase(), "storage")) {
-                Save(currentNumber);
-            }else if ( Objects.equals(userInput.toLowerCase(), "recall")   ) {
+                save(currentNumber);
+            }
+            else if ( Objects.equals(userInput.toLowerCase(), "recall")   ) {
                 currentNumber = recall();
                 Console.println("CURRENT NUMBER %s", currentNumber);
-            } else if (Objects.equals(userInput.toLowerCase(), "switch1")){
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "switch1")){
                 switchDisplayMode();
                 String newMode = scanner.nextLine();
                 display = switchUnitModes(newMode);
@@ -120,7 +126,8 @@ public class MainApplication {
             else if(Objects.equals(userInput.toLowerCase(), "atan")){
                 currentNumber = inTan(currentNumber, mode);
                 println("CURRENT NUMBER %s", currentNumber);
-            }else if (Objects.equals(userInput.toLowerCase(), "exit")) {
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "exit")) {
                 break;
             }
         }
