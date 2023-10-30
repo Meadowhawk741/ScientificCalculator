@@ -1,13 +1,11 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import java.io.ObjectStreamException;
 import java.util.Objects;
 import java.util.Scanner;
 
 import static com.zipcodewilmington.scientificcalculator.Console.*;
-import static com.zipcodewilmington.scientificcalculator.CoreFunctions.*;
-import static com.zipcodewilmington.scientificcalculator.ScientificFunctions.*;
-import static com.zipcodewilmington.scientificcalculator.UniqueFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.ArithmeticFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.TrigFunctions.*;
 
 /**
  * Created by leon on 2/9/18.

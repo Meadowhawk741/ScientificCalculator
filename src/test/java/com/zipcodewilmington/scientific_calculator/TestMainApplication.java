@@ -4,8 +4,9 @@ import com.zipcodewilmington.scientificcalculator.Console;
 import org.junit.Test;
 
 import static com.zipcodewilmington.scientificcalculator.Console.*;
-import static com.zipcodewilmington.scientificcalculator.CoreFunctions.*;
-import static com.zipcodewilmington.scientificcalculator.ScientificFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.ArithmeticFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.LogarithmicFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.TrigFunctions.*;
 import static com.zipcodewilmington.scientificcalculator.UniqueFunctions.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

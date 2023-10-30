@@ -1,8 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 
-public class CoreFunctions {
-
-    static double storage;
+public class ArithmeticFunctions {
 
     public static Double numberSign(Double userNumber) {
         return -userNumber;
@@ -47,14 +45,17 @@ public class CoreFunctions {
         return 1 / number;
     }
 
-    public static void save(double Number) {
-        storage = Number;
-        System.out.println(storage);
-    }
-
-    public static double recall() {
-        return storage;
-
+    public static Double factorial(Double userInput) {
+        if (userInput == 0) {
+            return 1.0;
+        }
+        else {
+            Double result = 1.0;
+            for (int i = 1; i < userInput; i++) {
+                result = result * (i + 1);
+            }
+            return result;
+        }
     }
 
 
