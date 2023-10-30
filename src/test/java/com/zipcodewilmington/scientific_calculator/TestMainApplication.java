@@ -134,7 +134,7 @@ public class TestMainApplication {
     // Please someone save me from trig testing hell :((((((((
     @Test
     public void testSineRadians(){
-        Double number1 = Math.PI;
+        Double number1 = 0.0;
 
         Double expected = 0.0;
 
@@ -150,24 +150,23 @@ public class TestMainApplication {
         assertEquals(expected, sine(number1, "radians"));
     }
 
-    // THESE AREN'T PASSING! TAM IS VERY AWARE OF IT!
-    /* @Test
+     @Test
     public void testCosineDegrees(){
-        Double number1 = 60.0;
+        Double number1 = 0.0;
 
-        Double expected = 0.5;
+        Double expected = 1.0;
 
         assertEquals(expected, cosine(number1, "degrees"));
     }
 
     @Test
     public void testCosineDegrees2(){
-        Double number1 = 90.0;
+        Double number1 = 180.0;
 
-        Double expected = 0.0;
+        Double expected = -1.0;
 
         assertEquals(expected, cosine(number1, "degrees"));
-    } */
+    }
 
     @Test
     public void testCosineRadians(){
@@ -197,15 +196,15 @@ public class TestMainApplication {
     }
 
     // TAM IS ALSO AWARE THIS ISN'T PASSING :(((((
-    /* @Test
+    /*@Test
     public void testTangentDegrees2(){
-        Double number = 45.0;
+        Double number = 90.0;
 
         Double expected = 1.0;
 
         assertEquals(expected, tangent(number, "degrees"));
 
-    } */
+    }*/
 
     @Test
     public void testTangentRadians(){

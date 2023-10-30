@@ -94,6 +94,8 @@ public class MainApplication {
             else if (Objects.equals(userInput.toLowerCase(), "clear")) {
                 currentNumber = clearScreen();
                 Console.println("CURRENT NUMBER %s", currentNumber);
+                currentNumber = Console.getDoubleInput("Enter a number: ");
+                Console.println("CURRENT NUMBER %s", currentNumber);
             }
             else if(Objects.equals(userInput.toLowerCase(), "cos")) {
                 currentNumber = cosine(currentNumber, mode);

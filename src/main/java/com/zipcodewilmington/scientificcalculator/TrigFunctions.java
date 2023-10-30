@@ -6,14 +6,19 @@ public class TrigFunctions {
         if (mode.equals("degrees")) {
             return Math.sin(Math.toRadians(number));
         }
-        return (double) (Math.round(Math.sin(number) * 100) / 100);
+        return Math.sin(number);
     }
 
     public static Double cosine(Double number, String mode){
         if(mode.equals("degrees")){
+            if(Math.cos(number) > 0 && Math.cos(number) < Math.pow(6, -17)){
+                return 0.0;
+            }
             return Math.cos(Math.toRadians(number));
         }
-        return Math.round(Math.cos(number) * 100d) / 100d;
+
+        return Math.cos(number);
+
     }
 
     public static Double tangent(Double number, String mode){
