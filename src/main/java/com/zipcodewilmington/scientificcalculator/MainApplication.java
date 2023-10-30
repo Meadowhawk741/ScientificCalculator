@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 import static com.zipcodewilmington.scientificcalculator.Console.*;
 import static com.zipcodewilmington.scientificcalculator.ArithmeticFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.LogarithmicFunctions.*;
 import static com.zipcodewilmington.scientificcalculator.TrigFunctions.*;
+import static com.zipcodewilmington.scientificcalculator.UniqueFunctions.convertCtoF;
+import static com.zipcodewilmington.scientificcalculator.UniqueFunctions.convertFtoC;
 
 /**
  * Created by leon on 2/9/18.
@@ -25,8 +28,8 @@ public class MainApplication {
         while (true) {
             println("What do you want to do? \n1) Add 2) Subtract 3) Invert 4) Multiply 5) Divide 6) Square \n" +
                     "7) Sqrt 8) Power 9) Inverse 10) sin 11) cos 12) tan 13) asin 14) acos 15) atan \n" +
-                    "16) switch (degrees/radians) 17) clear 18) factorial 19) log 20) storage " +
-                    "21) recall");
+                    "16) switch (degrees/radians) 17) clear 18) factorial 19) logarithm 20) inverse logarithm \n" +
+                    "21) natural logarithm 22) inverse natural logarithm 23) storage 24) FtoC 25) CtoF 26) recall");
 
             Scanner scanner = new Scanner(System.in);
             String userInput = scanner.nextLine();
@@ -121,8 +124,36 @@ public class MainApplication {
                 display = switchUnitModes(newMode);
                 Console.println("CURRENT NUMBER %s", currentNumber);
             }
-            else if(Objects.equals(userInput.toLowerCase(), "atan")){
+            else if (Objects.equals(userInput.toLowerCase(), "atan")){
                 currentNumber = inTan(currentNumber, mode);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "logarithm")){
+                currentNumber = logarithm(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "inverse logarithm")){
+                currentNumber = inverseLogarithm(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "natural logarithm")){
+                currentNumber = naturalLogarithm(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "inverse natural logarithm")){
+                currentNumber = inverseNaturalLogarithm(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "factorial")){
+                currentNumber = factorial(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "ctof")){
+                currentNumber = convertCtoF(currentNumber);
+                println("CURRENT NUMBER %s", currentNumber);
+            }
+            else if (Objects.equals(userInput.toLowerCase(), "ftoc")){
+                currentNumber = convertFtoC(currentNumber);
                 println("CURRENT NUMBER %s", currentNumber);
             }
             else if (Objects.equals(userInput.toLowerCase(), "exit")) {
