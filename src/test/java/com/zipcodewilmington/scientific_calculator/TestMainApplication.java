@@ -195,16 +195,15 @@ public class TestMainApplication {
         assertEquals(expected, tangent(number, "degrees"));
     }
 
-    // TAM IS ALSO AWARE THIS ISN'T PASSING :(((((
-    /*@Test
+    @Test
     public void testTangentDegrees2(){
-        Double number = 90.0;
+        Double number = 45.0;
 
         Double expected = 1.0;
 
         assertEquals(expected, tangent(number, "degrees"));
 
-    }*/
+    }
 
     @Test
     public void testTangentRadians(){

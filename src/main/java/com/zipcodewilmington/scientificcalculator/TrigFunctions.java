@@ -11,7 +11,7 @@ public class TrigFunctions {
 
     public static Double cosine(Double number, String mode){
         if(mode.equals("degrees")){
-            if(Math.cos(number) > 0 && Math.cos(number) < Math.pow(6, -17)){
+            if(Math.cos(Math.toRadians(number)) > 0 && Math.cos(Math.toRadians(number)) < Math.pow(6, -17)){
                 return 0.0;
             }
             return Math.cos(Math.toRadians(number));
@@ -23,9 +23,18 @@ public class TrigFunctions {
 
     public static Double tangent(Double number, String mode){
         if(mode.equals("degrees")){
+            if(Math.abs(Math.tan(Math.toRadians(number))) <= 1 && Math.abs(Math.tan(Math.toRadians(number))) >= .999999) {
+                return (double) Math.round(Math.tan(Math.toRadians(number)));
+            }
             return Math.tan(Math.toRadians(number));
         }
-        return (double) (Math.round(Math.tan(number) * 100) / 100);
+        if(Math.abs(Math.tan(number)) <= 1 && Math.abs(Math.tan(number)) >= .999999) {
+            return (double) Math.round(Math.tan(number));
+        }
+        if(Math.abs(Math.tan(number)) > 0 && Math.abs(Math.tan(number)) < Math.pow(6, -17)){
+            return 0.0;
+        }
+        return Math.tan(number);
     }
 
     public static Double inSin(Double number, String mode){
